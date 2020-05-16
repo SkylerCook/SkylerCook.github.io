@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/myfavicon-32px.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/myfavicon-16px.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|Playball:300,300italic,400,400italic,700,700italic|ZCOOL QingKe HuangYou:300,300italic,400,400italic,700,700italic|Noto Sans SC:300,300italic,400,400italic,700,700italic|Fira Code Retina:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-center-circle.min.css?v=1.0.2">
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="HTML5基础部分一个网页一般由结构层HTML，表示层CSS，行为层JavaScript组成。HTML5简介 HTML 5 是下一代的 HTML。 HTML5 仍处于完善之中。然而，大部分现代浏览器已经具备了某些 HTML5 支持。 HTML 5 向下兼容。 HTML5≈Html+CSS+Javascript+APIHTML5标签变化DOCTYPE声明定义和用法：&amp;lt;!DOCTYPE&amp;gt;声">
+<meta name="keywords" content="HTML5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML5 基础学习">
+<meta property="og:url" content="https://skylercook.github.io/2020/05/16/html5/index.html">
+<meta property="og:site_name" content="Skyler Cook Blog">
+<meta property="og:description" content="HTML5基础部分一个网页一般由结构层HTML，表示层CSS，行为层JavaScript组成。HTML5简介 HTML 5 是下一代的 HTML。 HTML5 仍处于完善之中。然而，大部分现代浏览器已经具备了某些 HTML5 支持。 HTML 5 向下兼容。 HTML5≈Html+CSS+Javascript+APIHTML5标签变化DOCTYPE声明定义和用法：&amp;lt;!DOCTYPE&amp;gt;声">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-05-16T11:41:54.864Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML5 基础学习">
+<meta name="twitter:description" content="HTML5基础部分一个网页一般由结构层HTML，表示层CSS，行为层JavaScript组成。HTML5简介 HTML 5 是下一代的 HTML。 HTML5 仍处于完善之中。然而，大部分现代浏览器已经具备了某些 HTML5 支持。 HTML 5 向下兼容。 HTML5≈Html+CSS+Javascript+APIHTML5标签变化DOCTYPE声明定义和用法：&amp;lt;!DOCTYPE&amp;gt;声">
+  <link rel="canonical" href="https://skylercook.github.io/2020/05/165/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>HTML5 基础学习 | Skyler Cook Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container">
+    <div class="headband"></div>
+    <a href="https://github.com/skylercook" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Skyler Cook Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">A Virgo Programmer's Blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="https://skylercook.github.io/2020/05/16/html5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Skyler Cook">
+      <meta itemprop="description" content="Arise, awake, stop not until your goal is achieved.">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Skyler Cook Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">HTML5 基础学习
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2020-05-16 19:39:21 / 修改时间：19:41:54" itemprop="dateCreated datePublished" datetime="2020-05-16T19:39:21+08:00">2020-05-16</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端笔记/" itemprop="url" rel="index"><span itemprop="name">前端笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span class="post-meta-item" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>4.6k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>4 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="HTML5基础部分"><a href="#HTML5基础部分" class="headerlink" title="HTML5基础部分"></a>HTML5基础部分</h1><p>一个网页一般由结构层HTML，表示层CSS，行为层JavaScript组成。</p><h2 id="HTML5简介"><a href="#HTML5简介" class="headerlink" title="HTML5简介"></a>HTML5简介</h2><blockquote>
+<p>HTML 5 是下一代的 HTML。 HTML5 仍处于完善之中。然而，大部分现代浏览器已经具备了某些 HTML5 支持。</p>
+<p>HTML 5 向下兼容。</p>
+</blockquote><p>HTML5≈Html+CSS+Javascript+API</p><h2 id="HTML5标签变化"><a href="#HTML5标签变化" class="headerlink" title="HTML5标签变化"></a>HTML5标签变化</h2><h3 id="DOCTYPE声明"><a href="#DOCTYPE声明" class="headerlink" title="DOCTYPE声明"></a>DOCTYPE声明</h3><p><strong>定义和用法：</strong></p><p><code>&lt;!DOCTYPE&gt;</code>声明必须是HTML文档的第一行，位于<code>&lt;html&gt;</code>标签之前。</p><a id="more"></a>
+
+
+
+
+<p><strong>不是HTML标签</strong></p>
+<p>指示web浏览器关于页面使用哪个HTML版本进行编写的指令</p>
+<h4 id="常用的DOCTYPE声明"><a href="#常用的DOCTYPE声明" class="headerlink" title="常用的DOCTYPE声明"></a>常用的DOCTYPE声明</h4><p><strong>HTML 4.01 Strict：</strong></p>
+<p><code>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;</code></p>
+<p><strong>HTML 4.01 Transitional：</strong></p>
+<p><code>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;</code></p>
+<p><strong>HTML 4.01 Frameset：</strong></p>
+<p><code>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Frameset//EN&quot; &quot;http://www.w3.org/TR/html4/frameset.dtd&quot;&gt;</code></p>
+<p><strong>HTML 5：</strong></p>
+<p><code>&lt;!DOCTYPE html&gt;</code></p>
+<p>:thinking:</p>
+<ol>
+<li>HTML5为什么不引用DTD？</li>
+<li>DTD是什么？</li>
+</ol>
+<h4 id="文档类型定义（DTD）"><a href="#文档类型定义（DTD）" class="headerlink" title="文档类型定义（DTD）"></a>文档类型定义（DTD）</h4><blockquote>
+<p>DTD可以定义合法的XML文档构建模块，它使用一系列合法的元素来定义文档的结构。</p>
+<p>在HTML中，DTD规定了标记语言的规则，这样浏览器才能正确地呈现内容。</p>
+<p>HTML的DTD中，使用XML（扩展标记语言）定义HTML标签规范。</p>
+</blockquote>
+<p>HTML 5不基于SGML，所以不需要应用DTD。</p>
+<p><a href="https://www.w3school.com.cn/tags/html_ref_dtd.asp" target="_blank" rel="noopener">HTML 元素和有效的 DTD</a></p>
+<h3 id="新增的标签"><a href="#新增的标签" class="headerlink" title="新增的标签"></a>新增的标签</h3><h4 id="1-结构标签"><a href="#1-结构标签" class="headerlink" title="1. 结构标签"></a>1. 结构标签</h4><blockquote>
+<p>结构标签（块状标签）——有意义的div</p>
+</blockquote>
+<ul>
+<li><code>&lt;artical&gt;</code> 标记定义一篇文章</li>
+<li><code>&lt;header&gt;</code> 标记定义一个页面或一个区域的头部</li>
+<li><code>&lt;nav&gt;</code> 标记定义导航链接</li>
+<li><code>&lt;section&gt;</code> 标记定义一个区域</li>
+<li><code>&lt;aside&gt;</code> 标记定义页面内容部分的侧边栏</li>
+<li><code>&lt;hgroup&gt;</code> 标记定义文件中一个区块的相关信息</li>
+<li><code>&lt;figure&gt;</code> 标记定义一组媒体内容以及它们的标题</li>
+<li><code>&lt;figcaption&gt;</code> 标签定义figure元素的标题</li>
+<li><code>&lt;footer&gt;</code> 标记定义一个页面或一个区域的底部</li>
+<li><code>&lt;dialog&gt;</code> 标记定义一个对话框（会话框）类似微信</li>
+</ul>
+<blockquote>
+<p>Tip：</p>
+<ol>
+<li>header，section，aside，article，footer不要嵌套</li>
+<li>header，section，footer（级别是最高的）&gt; aside，article，figure，hgruop，nav &gt; div，figcaption</li>
+</ol>
+</blockquote>
+<h4 id="2-多媒体标签"><a href="#2-多媒体标签" class="headerlink" title="2. 多媒体标签"></a>2. 多媒体标签</h4><blockquote>
+<p>三类多媒体标签</p>
+</blockquote>
+<ul>
+<li><code>video</code> 标记定义一个视频</li>
+<li><code>audio</code> 标记定义音频内容</li>
+<li><code>source</code> 标记定义媒体资源</li>
+</ul>
+<blockquote>
+<p>Others</p>
+</blockquote>
+<ul>
+<li><code>canvas</code> 标记定义图片，画布标签</li>
+<li><code>embed</code> 标记定义外部的可交互的内容或插件，比如flash</li>
+</ul>
+<blockquote>
+<p>标签意义：</p>
+<p>多媒体标签的出现意味着富媒体的发展以及支持不使用插件的情况下即可操作媒体文件，极大地提升了用户体验。</p>
+</blockquote>
+<h4 id="3-Web应用标签"><a href="#3-Web应用标签" class="headerlink" title="3. Web应用标签"></a>3. Web应用标签</h4><h5 id="状态标签"><a href="#状态标签" class="headerlink" title="状态标签"></a>状态标签</h5><ul>
+<li><code>&lt;meter&gt;</code> 状态标签（实时状态显示：气压、气温）状态的显示</li>
+<li><code>&lt;progress&gt;</code> 状态标签（任务过程：安装、加载）状态的过程</li>
+</ul>
+<blockquote>
+<p>浏览器兼容</p>
+<p><code>&lt;meter&gt;</code> Firefox，Opera，Chrome，Safari 6</p>
+<p><code>&lt;progress&gt;</code> IE 10+，Firefox，Opera，Chrome，Safari 6</p>
+</blockquote>
+<h5 id="列表标签"><a href="#列表标签" class="headerlink" title="列表标签"></a>列表标签</h5><ul>
+<li><code>&lt;datalist&gt;</code> 为input标签定义一个下拉列表，配合option</li>
+<li><code>&lt;details&gt;</code> 标记定义一个元素的详细内容，配合summary</li>
+</ul>
+<blockquote>
+<p>浏览器兼容</p>
+<p><code>&lt;datalist&gt;</code> Chrome，Firefox，IE 10+</p>
+<p><code>&lt;details&gt;</code> Chrome，Safari 6，Firefox</p>
+</blockquote>
+<h4 id="4-其他标签"><a href="#4-其他标签" class="headerlink" title="4. 其他标签"></a>4. 其他标签</h4><ul>
+<li><code>mark</code> 标记定义有标记的文本（黄色选中状态）</li>
+<li><code>output</code> 标记定义一些输出类型，计算表单结果配合oninput事件</li>
+</ul>
+<blockquote>
+<p>IE不支持output标签</p>
+</blockquote>
+<h3 id="删除的标签"><a href="#删除的标签" class="headerlink" title="删除的标签"></a>删除的标签</h3><h4 id="1-纯表现的标签"><a href="#1-纯表现的标签" class="headerlink" title="1. 纯表现的标签"></a>1. 纯表现的标签</h4><p>Basefont、big、center、font、s、strike、tt、u</p>
+<h4 id="2-对可用性产生负面影响的元素"><a href="#2-对可用性产生负面影响的元素" class="headerlink" title="2. 对可用性产生负面影响的元素"></a>2. 对可用性产生负面影响的元素</h4><p>frame、frameset、noframes</p>
+<blockquote>
+<p>iframe可以使用</p>
+</blockquote>
+<h4 id="3-产生混淆的元素"><a href="#3-产生混淆的元素" class="headerlink" title="3. 产生混淆的元素"></a>3. 产生混淆的元素</h4><p>acronym、applet、isindex、dir</p>
+<h3 id="重定义标签"><a href="#重定义标签" class="headerlink" title="重定义标签"></a>重定义标签</h3><blockquote>
+<p>显示不变，只是表达的含义进行了重新定义的标签</p>
+</blockquote>
+<p><code>&lt;b&gt;</code>    代表内联文本，通常是粗体，没有传递表示重要的意思</p>
+<p><code>&lt;i&gt;</code>    代表内联文本，通常是斜体，没有传递表示重要的意思</p>
+<p><code>&lt;dd&gt;</code> 描述    可以同details与figure一同使用，定义包含文本，dialog也可用</p>
+<p><code>&lt;dt&gt;</code> 标题    可以同details与figure一同使用，汇总细节，dialog也可用</p>
+<p><code>&lt;hr&gt;</code>    不仅表示水平线，还表示主题结束，显示效果相同</p>
+<p><code>&lt;menu&gt;</code>    重新定义用户界面的菜单，配合command或者menuitem使用</p>
+<p><code>&lt;small&gt;</code>    表示小字体，例如打印注释或者法律条款</p>
+<p><code>&lt;strong&gt;</code>    表示重要性而不是强调符号</p>
+<blockquote>
+<p><code>&lt;big&gt;</code>    HTML 5 中已删除</p>
+</blockquote>
+<h2 id="HTML5属性变化"><a href="#HTML5属性变化" class="headerlink" title="HTML5属性变化"></a>HTML5属性变化</h2><h3 id="Input属性"><a href="#Input属性" class="headerlink" title="Input属性"></a>Input属性</h3><blockquote>
+<p>email/url/tel/number/Date picker/range/search/color</p>
+</blockquote>
+<p>Date Pickers Input类型</p>
+<ul>
+<li>Date——选取日、月、年</li>
+<li>Month——选取月、年</li>
+<li>Week——选取周和年</li>
+<li>Time——选取时间（小时和分钟）</li>
+<li>DateTime——选取时间、日、月、年（UTC时间）</li>
+<li>DateTime——选取时间、日、月、年（本地时间）</li>
+</ul>
+<h3 id="表单属性"><a href="#表单属性" class="headerlink" title="表单属性"></a>表单属性</h3><blockquote>
+<p>autocomplete/autofocus/multiple/placeholder/required</p>
+</blockquote>
+<ol>
+<li><p>autocomplete属性</p>
+<p>form或input域应该拥有自动完成功能</p>
+<p>Ex: <code>&lt;form autocomplete=&quot;on&quot;&gt;&lt;/form&gt;</code></p>
+<blockquote>
+<p>Tip: autocomplete适用于<code>&lt;form&gt;</code>标签，以及以下类型的<code>&lt;input&gt;</code>标签：text,search,telephone,email,password,datepickers,range,color.</p>
+</blockquote>
+</li>
+<li><p>autofocus属性</p>
+<p>规定在页面加载时，域自动地获得焦点</p>
+<ul>
+<li>autofocus属性适用于所有<code>&lt;input&gt;</code>标签的类型</li>
+<li>Ex: <code>&lt;input autofocus=&quot;autofocus&quot;&gt;</code></li>
+</ul>
+</li>
+<li><p>multiple属性</p>
+<p>规定输入域可选择多个值</p>
+<blockquote>
+<p>Tip: multiple属性适用于以下类型的<code>&lt;input&gt;</code>标签：emial和file。</p>
+<p>Ex: <code>&lt;input type=&quot;file&quot; multiple=&quot;multiple&quot;&gt;</code></p>
+</blockquote>
+</li>
+<li><p>placeholder属性</p>
+<p>提供一种提示（hint），描述输入域所期待的值</p>
+<p>Ex: <code>&lt;input type=&quot;search&quot; placeholder=&quot;Search Content&quot;&gt;</code></p>
+<blockquote>
+<p>Tip: placeholder属性适用于<code>&lt;input&gt;</code>标签的type属性值为：</p>
+<p>text，search，url，telephone，email，password。</p>
+</blockquote>
+</li>
+<li><p>required属性</p>
+<p>规定必须在提交之前填写输入域（不能为空）</p>
+<p>Ex: <code>&lt;input type=&quot;text&quot; required=&quot;required&quot;&gt;</code></p>
+<blockquote>
+<p>Tip: required属性适用于标签type属性值为：</p>
+<p>text，search，url，telephone，email，password，date pickers，number，checkbox，radio，file</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="链接属性"><a href="#链接属性" class="headerlink" title="链接属性"></a>链接属性</h3><blockquote>
+<p><code>&lt;link&gt;</code>的sizes属性、<code>&lt;base&gt;</code>的target属性、超链接<code>&lt;a&gt;</code></p>
+</blockquote>
+<ol>
+<li><p>sizes</p>
+<p>Ex: <code>&lt;link rel=&quot;icon&quot; href=&quot;icon.gif&quot; type=&quot;image/gif&quot; sizes=&quot;16x16&quot;&gt;</code></p>
+</li>
+<li><p>target</p>
+<p>Ex: <code>&lt;base href=&quot;http://localhost&quot; target=&quot;_blank&quot;&gt;</code></p>
+</li>
+<li><p>超链接</p>
+<p>a:media=””(表示对设备进行优化，handheld对“手持”设备进行支持，tv对“电视”设备进行支持)；</p>
+<p>a:hreflang=”zh”(设置语言，这里设置语言是中文)；</p>
+<p>a:rel=”external”(设置超连接的引用，这里超链接为外部链接)。</p>
+</li>
+</ol>
+<h3 id="其他属性"><a href="#其他属性" class="headerlink" title="其他属性"></a>其他属性</h3><blockquote>
+<p>script/ol/html/style</p>
+</blockquote>
+<ol>
+<li><p>script</p>
+<p>defer: 加载完脚本后并不执行，而是等整个页面加载完之后在执行</p>
+<p>Ex: <code>&lt;script defer src=&quot;URL&quot;&gt;&lt;/script&gt;</code></p>
+<blockquote>
+<p>Tip: IE中可用</p>
+</blockquote>
+<p>async: 加载脚本后立即执行，不用等整个页面都加载完，属于异步执行（多线程加载）</p>
+<p>Ex: <code>&lt;script async src=&quot;URL&quot;&gt;&lt;/script&gt;</code></p>
+<blockquote>
+<p>主流浏览器支持</p>
+</blockquote>
+</li>
+<li><p>ol有序列表</p>
+<p>Start——起始值</p>
+<p>Reversed——倒叙排列</p>
+</li>
+<li><p>html</p>
+<p>manifest=”cache.manifest”(定义页面离线应用文件)</p>
+<p>Ex: <code>&lt;html manifest=&quot;cache.manifest&quot;&gt;</code></p>
+</li>
+<li><p>*style(不推荐使用)</p>
+<p>scoped:内嵌CSS</p>
+<p>Ex: </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span></span><br><span class="line">    ......</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="HTML5-新布局的意义"><a href="#HTML5-新布局的意义" class="headerlink" title="HTML5 新布局的意义"></a>HTML5 新布局的意义</h2><h3 id="语义化"><a href="#语义化" class="headerlink" title="语义化"></a>语义化</h3><p>HTML5可以让很多更语义化的结构化代码标签代替大量的无意义的div标签。</p>
+<ol>
+<li>这种语义化的特性提升了网页的质量和语义；</li>
+<li>减少了以前用于CSS调用的class和id属性。</li>
+</ol>
+<h3 id="对搜索引擎的友好"><a href="#对搜索引擎的友好" class="headerlink" title="对搜索引擎的友好"></a>对搜索引擎的友好</h3><p>新的结构标签带来的是网页布局的改变及提升对搜索引擎的友好。</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/HTML5/" rel="tag"><i class="fa fa-tag"></i> HTML5</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2020/05/12/html/" rel="next" title="HTML 基础学习笔记">
+                  <i class="fa fa-chevron-left"></i> HTML 基础学习笔记
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+    
+  <div class="comments" id="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80NjYyNi8yMzEzNg=="></div>
+  </div>
+  
+  
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML5基础部分"><span class="nav-number">1.</span> <span class="nav-text">HTML5基础部分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5简介"><span class="nav-number">1.1.</span> <span class="nav-text">HTML5简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5标签变化"><span class="nav-number">1.2.</span> <span class="nav-text">HTML5标签变化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOCTYPE声明"><span class="nav-number">1.2.1.</span> <span class="nav-text">DOCTYPE声明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用的DOCTYPE声明"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">常用的DOCTYPE声明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文档类型定义（DTD）"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">文档类型定义（DTD）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新增的标签"><span class="nav-number">1.2.2.</span> <span class="nav-text">新增的标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-结构标签"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">1. 结构标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-多媒体标签"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">2. 多媒体标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Web应用标签"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">3. Web应用标签</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#状态标签"><span class="nav-number">1.2.2.3.1.</span> <span class="nav-text">状态标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#列表标签"><span class="nav-number">1.2.2.3.2.</span> <span class="nav-text">列表标签</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-其他标签"><span class="nav-number">1.2.2.4.</span> <span class="nav-text">4. 其他标签</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除的标签"><span class="nav-number">1.2.3.</span> <span class="nav-text">删除的标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-纯表现的标签"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">1. 纯表现的标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-对可用性产生负面影响的元素"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">2. 对可用性产生负面影响的元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-产生混淆的元素"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">3. 产生混淆的元素</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重定义标签"><span class="nav-number">1.2.4.</span> <span class="nav-text">重定义标签</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5属性变化"><span class="nav-number">1.3.</span> <span class="nav-text">HTML5属性变化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Input属性"><span class="nav-number">1.3.1.</span> <span class="nav-text">Input属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表单属性"><span class="nav-number">1.3.2.</span> <span class="nav-text">表单属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链接属性"><span class="nav-number">1.3.3.</span> <span class="nav-text">链接属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他属性"><span class="nav-number">1.3.4.</span> <span class="nav-text">其他属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5-新布局的意义"><span class="nav-number">1.4.</span> <span class="nav-text">HTML5 新布局的意义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语义化"><span class="nav-number">1.4.1.</span> <span class="nav-text">语义化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对搜索引擎的友好"><span class="nav-number">1.4.2.</span> <span class="nav-text">对搜索引擎的友好</span></a></li></ol></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.jpg"
+      alt="Skyler Cook">
+  <p class="site-author-name" itemprop="name">Skyler Cook</p>
+  <div class="site-description" itemprop="description">Arise, awake, stop not until your goal is achieved.</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/skylercook" title="GitHub &rarr; https://github.com/skylercook" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:skylercook@qq.com" title="E-Mail &rarr; mailto:skylercook@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Skyler Cook</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">22k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">20 分钟</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-users"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+    
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='80' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+<script src="/js/utils.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.4.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+</body>
+</html>
